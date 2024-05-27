@@ -1,4 +1,7 @@
 import React from 'react'
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import 'bootstrap/dist/css/bootstrap.css'; 
 import Carousel from 'react-bootstrap/Carousel';
 import saraLogo from '../assets/wema.png'
@@ -6,6 +9,14 @@ import hero from '../assets/hero-2-1.jpg'
 import './Hero.css'
 
 export const Hero = () => {
+    useEffect(() => {
+        AOS.init({
+          disable: "phone",
+          duration: 900,
+          easing: "ease-out-cubic",
+        });
+    }, []);
+
   return (
     <div style={{ display: 'block', height: '700px', position: 'relative'}}> 
       <Carousel className='carousel carousel-fade'> 
@@ -17,7 +28,7 @@ export const Hero = () => {
                 alt="Image One"
             /> 
           </div>
-          <Carousel.Caption className='top-0 mt-5 pt-0 d-md-block'> 
+          <Carousel.Caption className='top-0 mt-5 pt-0 d-md-block' data-aos="fade-up"> 
             <h3 className='text-start display-2 mt-5'>TRANSITIONING INTO TECH FOR WOMEN</h3> 
             <p className='text-start fw-bolder mt-3 mb-4'>in partnership with</p> 
             <img src={saraLogo} alt="" className='sara mb-4' />
