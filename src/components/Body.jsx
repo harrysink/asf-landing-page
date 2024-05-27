@@ -1,13 +1,24 @@
 import React from 'react'
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FAQ } from './FAQ'
 import './Body.css'
 
 export const Body = () => {
+    useEffect(() => {
+        AOS.init({
+          disable: "phone",
+          duration: 900,
+          easing: "ease-out-cubic",
+        });
+    }, []);
+
   return (
     <div className='relative body mt-5 p-7'>
         {/* welcome section */}
-        <section className='text-center text-bold mb-20'>
+        <section className='text-center text-bold mb-20' data-aos="fade-up">
             <p className='mb-2'>WELCOME TO AFRICA STARTUP FACTORY</p>
             <p className='tech-journey mb-3 text-7xl text-gray-800'>Your tech journey begins here!</p>
             <p className='px-20 mb-4'><span className='text-amber-400 font-medium'>Transitioning to Tech for Women</span> program is designed to provide 
@@ -21,7 +32,7 @@ export const Body = () => {
         </section>
 
         {/* how does it work? */}
-        <section className='w-full mb-20 mr-7 ml-7'>
+        <section className='w-full mb-20 mr-7 ml-7' data-aos="fade-up">
             <p className='text-center mb-10 text-3xl font-bold text-gray-500'>How does it work?</p>
             <div className='flex'>
                 {/* 1 and 4 */}
@@ -70,7 +81,7 @@ export const Body = () => {
         </section>
 
         {/* FAQ section */}
-        <div><FAQ /></div>
+        <div data-aos="fade-up"><FAQ /></div>
     </div>
   )
 }
