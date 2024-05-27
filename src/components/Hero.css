@@ -1,0 +1,14 @@
+.sara {
+    width: 100px;
+    border-radius: 7px;
+}
+.btn {
+    background-color: rgb(255, 174, 0);
+    border: 1px solid rgb(255, 174, 0);
+    color: white;
+}
+.hero {
+    height: 700px !important;
+    width: 100vw;
+    object-fit: cover;
+}
